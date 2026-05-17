@@ -1,0 +1,228 @@
+/* 1. СИСТЕМНЫЕ НАСТРОЙКИ (CORE) */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    font-size: 20px;          
+    line-height: 1.8;         
+    color: #1a1a1a;
+    background-color: #fcfcfc;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    width: 90%;
+    max-width: 850px;        
+    margin: 0 auto;
+}
+
+/* 2. ШАПКА (HEADER) — СЖАТАЯ, БЕЗ ПУСТОТЫ */
+header {
+    background: #ffffff;
+    padding: 20px 0; 
+    text-align: center;      
+    border-bottom: 2px solid #000;
+}
+
+header h1 {
+    text-transform: uppercase;
+    letter-spacing: 8px;     
+    margin: 0 auto;
+    font-size: 2.2em;
+    font-weight: 900;
+    display: block;
+    line-height: 1.1;
+}
+
+nav { 
+    margin-top: 15px; 
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 5px 15px;
+    transition: opacity 0.3s;
+}
+
+nav a:hover { opacity: 0.6; }
+
+/* 3. ГЛАВНЫЙ БАННЕР (HERO) — КАРТА ОСТАЕТСЯ БОЛЬШОЙ */
+.hero {
+    margin: 40px 0;
+}
+
+.main-banner {
+    width: 100%;
+    max-width: 850px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #000;
+}
+
+/* 4. СЕТКА СТАТЕЙ (ARTICLES GRID) */
+.articles-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+/* ПЛИТКИ: ИДЕАЛЬНО ВЫДЕЛЕНЫ ФОНОМ И ТЕНЬЮ */
+.article-card {
+    flex: 1 1 100%;          
+    display: flex;
+    flex-direction: column;
+    background: #fdfbf7; /* Мягкий благородный фон под цвет пергамента карты */
+    padding: 20px;
+    border: 1px solid #e3dec3; /* Аккуратная винтажная рамочка */
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06); /* Мягкая тень */
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.article-card:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    transform: translateY(-5px); /* Плавный взлет при наведении */
+}
+
+/* 5. ИЗОБРАЖЕНИЯ (ASPECT RATIO 16:9) */
+.image-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #f0f0f0;
+    overflow: hidden;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.image-placeholder {
+    color: #aaa;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* 6. ТИПОГРАФИКА СТАТЕЙ */
+.article-card h2 {
+    font-size: 1.8em;
+    margin: 15px 0 10px 0;
+    line-height: 1.2;
+}
+
+.article-card p {
+    font-size: 0.95em;
+    color: #333;
+    margin-bottom: 25px;
+    flex-grow: 1;
+    padding: 0 10px;
+}
+
+/* 7. КНОПКА (THE JOURNAL STYLE BUTTON) */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: transparent;
+    color: #1a1a1a;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-align: center;
+    border: 2px solid #1a1a1a;
+    border-radius: 0;
+    transition: all 0.3s ease;
+    margin-top: auto;        
+    align-self: center;
+}
+
+.btn:hover {
+    background: #ffc500;     
+    color: #000;
+    border-color: #ffc500;
+    box-shadow: 0 4px 15px rgba(255, 197, 0, 0.3);
+}
+
+/* 8. ПОДВАЛ (FOOTER) */
+footer {
+    background: #000;
+    color: #fff;
+    padding: 40px 0 20px 0;
+    margin-top: 80px;
+    text-align: center;
+}
+
+footer p {
+    font-size: 0.7em;
+    letter-spacing: 3px;
+    opacity: 0.6;
+    margin: 5px 0;
+    text-transform: uppercase;
+}
+
+.footer-legal {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #222;
+}
+
+.footer-legal a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 0.65em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+.footer-legal a:hover { color: #ffc500; }
+
+/* 9. АДАПТИВНОСТЬ (MEDIA QUERIES) — СТРОГО 2 В РЯД НА ПК */
+@media (min-width: 768px) {
+    .article-card {
+        flex: 1 1 45%; /* Твоя любимая сетка в два ряда на ноутбуках и мониторах */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 18px;    
+    }
+    header {
+        padding: 20px 0;
+    }
+    header h1 {
+        font-size: 1.5em;
+        letter-spacing: 4px; 
+    }
+    .article-card h2 {
+        font-size: 1.5em;
+    }
+    .articles-grid {
+        gap: 25px;
+    }
+}
