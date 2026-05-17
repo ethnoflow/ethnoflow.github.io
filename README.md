@@ -14,3 +14,6 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
+## Media Credits
+Most of the photographic materials used in this project are sourced from Wikimedia Commons under Creative Commons (CC-BY / CC-BY-SA) and Public Domain licenses.
